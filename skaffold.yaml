@@ -5,14 +5,16 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: neon-obelisk-336915
   artifacts:
-    - image: bekeeee/auth
+    - image: us.gcr.io/neon-obelisk-336915/auth
       context: auth
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.ts'
+          - src: "src/**/*.ts"
             dest: .

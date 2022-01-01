@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: bekeeee/auth
+          image: us.gcr.io/neon-obelisk-336915/auth
 ---
 apiVersion: v1
 kind: Service
