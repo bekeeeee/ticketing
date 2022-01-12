@@ -1,0 +1,34 @@
+sudo docker tag beke/tickets:latest bekeeee/microservices:tickets
+sudo docker push bekeeee/microservices:tickets
+
+sudo docker save beke/tickets | (eval $(minikube docker-env) && docker load)
+
+
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+sudo lsof -i tcp:80
+minikube addons enable ingress
+
+
+
+unset http_proxy
+unset https_proxy
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+
+
+kubectl config view 
+kubectl config use-context kubernetes
+
+
+kubectl get namespace
+
+kubectl get services -n ingress-nginx
+kubectl expose deployment ingress-nginx-controller --target-port=80 --type=NodePort -n ingress-nginx
+
+
+kubectl config current-context
+kubectl config get-contexts 
+kubectl config use-context
+
+
+k port-forward nats-depl-67d9f987c-tpz64 4222:4222 
+k port-forward nats-depl-77575c556b-n2mt5 8222:8222 

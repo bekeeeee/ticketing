@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/node": "^17.0.8",
     "node-nats-streaming": "^0.3.2",
+    "sgticketsbekeeeee": "^1.0.5",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.4"
   }
