@@ -27,8 +27,8 @@ kubectl expose deployment ingress-nginx-controller --target-port=80 --type=NodeP
 
 kubectl config current-context
 kubectl config get-contexts 
-kubectl config use-context
+kubectl config use-context gke_neon-obelisk-336915_us-central1-c_ticketing-dev
 
 
-k port-forward nats-depl-67d9f987c-tpz64 4222:4222 
+k port-forward nats-depl-8ff8cfc6d-n7lqp 4222:4222 
 k port-forward nats-depl-77575c556b-n2mt5 8222:8222 

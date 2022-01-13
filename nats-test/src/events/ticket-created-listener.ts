@@ -8,7 +8,7 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
     super(client);
   }
   onMessage(data: TicketCreatedEvent["data"], msg: Message) {
-    console.log("Event data!!!", data.price);
+    console.log("Event data!!!", data);
 
     msg.ack();
   }
