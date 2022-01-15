@@ -1,7 +1,12 @@
 import mongoose from "mongoose";
 import { app } from "./app";
 import { natsWrapper } from "./nats-wrapper";
+
 const start = async () => {
+  console.log("NATS_CLUSTER_ID", process.env.NATS_CLUSTER_ID);
+  console.log("NATS_CLIENT_ID", process.env.NATS_CLIENT_ID);
+  console.log("NATS_CLIENT_ID", process.env.NATS_CLIENT_ID);
+  console.log("NATS_URL", process.env.NATS_URL);
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
   }
@@ -12,15 +17,12 @@ const start = async () => {
     throw new Error("NATS_CLIENT_ID must be defined");
   }
   if (!process.env.NATS_URL) {
-    throw new Error("MONGO_UNATS_URLRI must be defined");
+    throw new Error("NATS_URL must be defined");
   }
   if (!process.env.NATS_CLUSTER_ID) {
     throw new Error("NATS_CLUSTER_ID must be defined");
   }
 
-  // console.log("process.env.MONGO_URI", process.env.MONGO_URI);
-
-  // await natsWrapper.connect("ticketing", "laskjf", "http://nats-srv:4222");
   try {
     await natsWrapper.connect(
       process.env.NATS_CLUSTER_ID,
@@ -48,4 +50,5 @@ const start = async () => {
     console.log("Listening on port 3000!!!!!!!!");
   });
 };
+
 start();
