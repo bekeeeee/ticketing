@@ -34,6 +34,14 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
+    - image: us.gcr.io/neon-obelisk-336915/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
     - image: us.gcr.io/neon-obelisk-336915/client
       context: client
       docker:
